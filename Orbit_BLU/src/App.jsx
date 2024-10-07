@@ -1,18 +1,22 @@
-import './App.css'
-import {BrowserRouter, Routes, Route } from "react-router-dom"
-import Sidebar from "../src/pages/layout/Sidebar"
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Insitution from "./pages/insitution/Insitution";
+import Layout from "./pages/layout/Layout";
 
 function App() {
-
   return (
     <>
-     <BrowserRouter>
-     <Routes>
-      <Route path='/' element={<Sidebar/>}/>
-     </Routes>
-     </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/insitution" element={<Insitution/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

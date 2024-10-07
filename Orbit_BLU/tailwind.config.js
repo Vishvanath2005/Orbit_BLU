@@ -7,10 +7,16 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-      'Roboto Serif': ["Roboto Serif", 'sans-serif'],
-      'Source Sans Pro':["Source Sans Pro", 'sans-serif'],
-      'Exo':["Exo",'sans-serif']
-      },
+      'Roboto_Serif': ["Roboto Serif",'sans serif'],
+      'Source_Sans_Pro':["Source Sans Pro",'sans serif'],
+      'Exo':["Exo",'sans serif'],
+          },
+      colors:{
+        'background':'#f5f7fb',
+        'select-sidebar':'#f0f8ff',
+        'select-title':' #3B5998',
+        'orange':'#FD7D00'
+      }
     },
   },
   plugins: [],

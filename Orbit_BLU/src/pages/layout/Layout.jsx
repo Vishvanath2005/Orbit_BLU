@@ -13,17 +13,17 @@ import { FiUserPlus } from "react-icons/fi";
 import { TbMessagePlus } from "react-icons/tb";
 import { RiVipDiamondLine } from "react-icons/ri";
 import { TbSettings } from "react-icons/tb";
-import Navbar from "../layout/Navbar"
+import Navbar from "./Navbar"
 
 
-const Sidebar = () => {
+const Layout = () => {
   const location = useLocation();
   const [open, setOpen] = useState(true);
   const [submenuopen, Setsubmenuopen] = useState(false);
 
   const Menus = [
-    { title: "Dashboard", icon: <LuLayoutDashboard />, to: "#" },
-    { title: "Insitution", icon: <HiOutlineBuildingOffice2 />, to: "#" },
+    { title: "Dashboard", icon: <LuLayoutDashboard />, to: "/dashboard" },
+    { title: "Insitution", icon: <HiOutlineBuildingOffice2 />, to: "/insitution" },
     { title: "Leads", icon: <GoPeople />, to: "#" },
     { title: "Enquires", icon: <TbUserQuestion />, to: "#" },
     { title: "Tickets", icon: <TbTicket />, to: "#" },
@@ -36,9 +36,9 @@ const Sidebar = () => {
 
   return (
     <div>
-      <div className="w-full h-screen relative z-0 md:flex">
+      <div className="w-full h-screen relative z-0  md:flex">
         <div
-          className={` md:relative md:grid md:grid-rows-12 absolute   transition-all duration-100 ${
+          className={` md:relative md:grid md:grid-rows-12 absolute transition-all duration-100 ${
             open ? "md:w-1/6 w-3/6 h-screen" : "md:w-1/12 "
           }`}
         >
@@ -54,26 +54,26 @@ const Sidebar = () => {
             <img
               src={logo}
               alt="Image"
-              className={`transition-all duration-500 mt-5  ${
+              className={`transition-all duration-500  ${
                 open
-                  ? "w-2/3 h-10 mt-1 ml-6 "
+                  ? "w-2/4 h-8 mt-10 ml-9 "
                   : "md:w-20 md:h-10 md:mt-12 md:ml-4 md:mr-5 w-9 h-9 mr-10"
               }`}
             />
         
           
 
-          <div className="row-span-10 mt-4 ">
-            <ul className="pt-2 ">
+          <div className="row-span-10 mt-9 ">
+            <ul className="pt-3 ">
               {Menus.map((menu, index) => (
                 <React.Fragment key={index}>
                   <NavLink to={menu.to}>
                     <li
-                      className={` cursor-pointer text-md flex items-center pl-12 text-gray-500 font-medium font-Source Sans Pro gap-x-3 p-2 mt-1  transition-all duration-700 hover:bg-gray-200 hover:text-primary  ${
+                      className={` cursor-pointer text-md flex items-center  text-gray-500 font-medium pl-10 font-Source Sans Pro gap-x-3 p-3 mt-1  transition-all duration-700 hover:bg-blue-100 hover:text-blue-500  ${
                         location.pathname === menu.to
                           ? `${
                               open
-                                ? "bg-gray-200 text-primary transition-all duration-500"
+                                ? "bg-select-sidebar  text-blue-500 transition-all duration-500"
                                 : "md:bg-gray-200 md:text-primary md:transition-all md:duration-500 duration-75"
                             }`
                           : "text-gray-500  "
@@ -87,44 +87,18 @@ const Sidebar = () => {
                               : "md:text-3xl md:ml-3 md:opacity-100 opacity-0"
                           }`}
                         >
-                          <div className="">{menu.icon}</div>
+                          <div className="text-xl">{menu.icon}</div>
                         </span>
                         <span
-                          className={`font-alegerya text-base flex-1 duration-300 ${
+                          className={`font-Source Sans Pro text-lg font-normal flex-1 duration-300 ${
                             !open && "hidden"
                           }`}
                         >
                           {menu.title}
                         </span>
                       </div>
-
-                      {/* {menu.submenu && open && (
-                    <BsChevronDown
-                      className={`cursor-pointer transition-transform delay-100  ${
-                        submenuopen && "rotate-180"
-                      }`}
-                      onClick={() => Setsubmenuopen(!submenuopen)}
-                    />
-                  )} */}
                     </li>
                   </NavLink>
-                  {menu.submenu && submenuopen && open && (
-                    <ul>
-                      {menu.submenuItems.map((submenuitem, subIndex) => (
-                        <NavLink to={submenuitem.to} key={subIndex}>
-                          <li
-                            className={` cursor-pointer font-alegerya text-sm flex items-center gap-x-2 p-2 pl-20 hover:bg-gray-200 hover:text-primary ${
-                              location.pathname === submenuitem.to
-                                ? "bg-gray-200 text-primary "
-                                : "text-white"
-                            }`}
-                          >
-                            {submenuitem.title}
-                          </li>
-                        </NavLink>
-                      ))}
-                    </ul>
-                  )}
                 </React.Fragment>
               ))}
             </ul>
@@ -132,7 +106,7 @@ const Sidebar = () => {
         </div>
 
         <div
-          className={`flex flex-col bg-gray-200  no-scrollbar h-screen transition-all duration-300 overflow-hidden ${
+          className={`flex flex-col bg-background  no-scrollbar h-screen transition-all duration-300 px-10  overflow-hidden ${
             open ? "md:w-5/6 sm:w-full" : "md:w-11/12 sm:w-full"
           }`}
         >
@@ -146,4 +120,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Layout;

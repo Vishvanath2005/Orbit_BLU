@@ -4,7 +4,7 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <div className="m-5 flex justify-between">
+    <div className=" my-5 flex justify-between">
       <div className="font-Source Sans Pro  ">
         <div className="bg-white w-96 flex gap-2 rounded-lg p-2 items-center  ">
           <IoSearchOutline className="text-xl font-semibold"/>
@@ -22,12 +22,12 @@ const Navbar = () => {
         <div className=" bg-blue-200 px-3 py-3 rounded-full">
           <IoMdNotificationsOutline className="text-2xl text-blue-800 " />
         </div>
-        <p className="text-2xl">|</p>
+        <p className="text-5xl font-thin pb-3">|</p>
         <p className="text-2xl bg-blue-200 px-4 py-1.5 text-blue-800 font-semibold rounded-full">
           V
         </p>
         <div>
-          <p className="text-xl font-medium font-Exo">Profile Name</p>
+          <p className="text-xl font-semibold font-Exo">Profile Name</p>
           <p className="text-sm text-gray-400 font-Source Sans Pro">
             Profile Role
           </p>
