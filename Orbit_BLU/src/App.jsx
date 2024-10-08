@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard";
-import Insitution from "./pages/insitution/Insitution";
+import Insitution from "./pages/institution/Institution";
 import Layout from "./pages/layout/Layout";
 
 function App() {

@@ -8,14 +8,15 @@ export default {
     extend: {
       fontFamily:{
       'Roboto_Serif': ["Roboto Serif",'sans serif'],
-      'Source_Sans_Pro':["Source Sans Pro",'sans serif'],
+      'Source_Sans_Pro':["Source Sans 3", 'sans-serif'],
       'Exo':["Exo",'sans serif'],
           },
       colors:{
         'background':'#f5f7fb',
         'select-sidebar':'#f0f8ff',
         'select-title':' #3B5998',
-        'orange':'#FD7D00'
+        'orange':'#FD7D00',
+        'credits':'#1366D9'
       }
     },
   },
