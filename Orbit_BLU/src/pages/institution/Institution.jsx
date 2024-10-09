@@ -3,48 +3,61 @@ import { HiArrowsUpDown } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
+import { useNavigate} from "react-router-dom";
+import { useState } from "react";
+import HeaderButton from "../../components/HeaderButton";
+import AddInstitution from "./AddInstitution";
+import ViewInstitution from "./ViewInstitution";
 
 const Institution = () => {
+  const hasCreatePermission = ("create");
+  const hasViewPermission = ("view");
+  const [isModal, setIsModal] = useState(false);
+  const [isModal1, setIsModal1] = useState(false);
+
   return (
+    <>
     <div>
       <div className="flex my-3 justify-between">
         <p className="font-Exo font-semibold text-3xl font">Institution </p>
-        <button className="bg-orange py-2 px-4 rounded-lg text-white font-Source_Sans_Pro">
-          Add Institution
-        </button>
+        <HeaderButton
+           title= "institution"
+            hasCreatePermission={hasCreatePermission}
+            onClick={() => setIsModal(true)}
+          />
       </div>
-      <table className="w-full bg-white items-center rounded-lg overflow-auto ">
-        <thead className="border-b-2 items-center">
-          <tr className=" text-end bg-slate-300 rounded-lg">
-            <th className=" p-4 font-semibold  ">
+      <table className="w-full  items-center rounded-lg overflow-auto ">
+        <thead className="items-center">
+          <tr className=" text-end  ">
+            <th className="bg-slate-200 p-4 font-semibold rounded-l-lg ">
               <p className="flex gap-2 items-center">
                 {" "}
                 S.No <HiArrowsUpDown />
               </p>
             </th>
 
-            <th className="font-semibold ">
+            <th className="bg-slate-200 font-semibold ">
               <p className="flex gap-2 items-center">
                 {" "}
                 Institution ID <HiArrowsUpDown />{" "}
               </p>
             </th>
 
-            <th className="font-semibold pl-2">
+            <th className="bg-slate-200 font-semibold pl-2">
               <p className="flex gap-2 items-center">
                 {" "}
                 Institution Name <HiArrowsUpDown />
               </p>
             </th>
 
-            <th className="font-semibold pl-14 ">
+            <th className=" bg-slate-200 font-semibold pl-14 ">
               <p className="flex gap-2 items-center">
                 {" "}
                 Email ID <HiArrowsUpDown />
               </p>
             </th>
 
-            <th className="font-semibold ">
+            <th className="bg-slate-200 font-semibold ">
               <p className="flex gap-2 items-center">
                 {" "}
                 SPOC Name
@@ -52,42 +65,40 @@ const Institution = () => {
               </p>
             </th>
 
-            <th className="font-semibold ">
+            <th className="font-semibold bg-slate-200">
               <p className="flex gap-2 items-center">
                 {" "}
                 Credit <HiArrowsUpDown />
               </p>
             </th>
 
-            <th className=" items-center font-semibold pl-12">
+            <th className=" items-center bg-slate-200 font-semibold pl-12">
               <p className="flex gap-2">
                 {" "}
                 Date <HiArrowsUpDown />
               </p>
             </th>
 
-            <th className="items-center font-semibold px-2">
+            <th className="items-center bg-slate-200 font-semibold px-2">
               <p className="flex gap-2 items-center">
                 {" "}
                 Status <HiArrowsUpDown />
               </p>
             </th>
 
-            <th className="font-semibold ">
-              <p className="items-center"></p>
+            <th className="font-semibold bg-slate-200 rounded-r-lg">
+              <p className="items-center "></p>
             </th>
           </tr>
         </thead>
         <tbody className=" text-start">
-          <tr className=" text-sm text-start text-gray-400 border-b-2">
+          <tr className=" text-sm text-start bg-white text-gray-400 border-b-2">
             <td className="py-3 pl-4 ">
               <p>123</p>
             </td>
             <td className="text-center text-blue-500">
-              <p>
-                <a href="">
+              <p onClick={() => setIsModal1(true)}>
                   <u>12345</u>
-                </a>
               </p>
             </td>
             <td className="text-center">
@@ -110,8 +121,8 @@ const Institution = () => {
                 active
               </p>
             </td>
-            <td className="px-4 text-center">
-              <p className="bg-red-200 rounded-lg text-red-700 pl-3 p-1.5  items-center">
+            <td className=" pl-2 pr-4">
+              <p className="bg-red-200 rounded-md text-red-700 pl-3 p-1.5">
                 {" "}
                 <RiDeleteBin6Line  className="text-lg"/>
               </p>
@@ -128,7 +139,7 @@ const Institution = () => {
             <GoArrowLeft /> Previous
           </p>
           <div className="flex items-center gap-4">
-            <p className="bg-orange px-2 rounded-lg text-white">1</p>
+            <p className="bg-orange px-2 p-0.5 rounded-md text-white">1</p>
             <p>2</p>
             <p>3</p>
             <p>...</p>
@@ -142,6 +153,9 @@ const Institution = () => {
 
       <div className="flex justify-center py-3"></div>
     </div>
+    {isModal && <AddInstitution/>}
+    {isModal1 && <ViewInstitution/>}
+    </>
   );
 };
 

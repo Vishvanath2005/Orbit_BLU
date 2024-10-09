@@ -25,7 +25,7 @@ const Layout = () => {
     { title: "Dashboard", icon: <LuLayoutDashboard />, to: "/dashboard" },
     { title: "Institution", icon: <HiOutlineBuildingOffice2 />, to: "/insitution" },
     { title: "Leads", icon: <GoPeople />, to: "#" },
-    { title: "Enquires", icon: <TbUserQuestion />, to: "#" },
+    { title: "Enquires", icon: <TbUserQuestion />, to: "/enquries" },
     { title: "Tickets", icon: <TbTicket />, to: "#" },
     { title: "Packages", icon: <PiPackageDuotone />, to: "#" },
     { title: "Users", icon: <FiUserPlus />, to: "#" },
