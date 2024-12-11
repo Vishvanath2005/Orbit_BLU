@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Select from "react-select";
 import { IoClose } from "react-icons/io5";
 const AddUser = ({ onClose }) => {
   const [add, setAdd] = useState(false);
@@ -161,57 +162,25 @@ const AddUser = ({ onClose }) => {
                     <label className="col-span-4   text-[#48505E] text-base font-normal  ">
                       Skills
                     </label>
-                    <select
-                      defaultValue="Select Skills"
-                      className=" col-span-2 border text-base  border-[#D0D5DD] text-grey rounded-md w-60 h-11 px-2 "
-                    >
-                     
-                      <option value="call">skill</option>
-                      <option value="email">skills</option>
-                      <option value="sms">skills</option>
-                    </select>
+                    <Select options={skills} isMulti  className=" col-span-2 text-base w-60 z-10  text-grey rounded-md h-11  " ></Select>
                   </div>
                   <div className="col-span-6 my-2  items-center flex justify-between">
                     <label className="col-span-4 text-[#48505E] text-base font-normal  ">
                       Strong Areas
                     </label>
-                    <select
-                      defaultValue="Select Skills"
-                      className=" col-span-2 border text-base  border-[#D0D5DD] text-grey rounded-md w-60 h-11 px-2 "
-                    >
-                     
-                      <option value="call">skill</option>
-                      <option value="email">skills</option>
-                      <option value="sms">skills</option>
-                    </select>
+                   <Select options={skills} isMulti  className=" col-span-2  text-base w-60  text-grey rounded-md h-11  " ></Select>
                   </div>
                   <div className="col-span-6 my-2  items-center flex justify-between">
                     <label className="col-span-4   text-[#48505E] text-base font-normal  ">
                       Need to improve
                     </label>
-                    <select
-                      defaultValue="Select Skills"
-                      className=" col-span-2 border text-base border-[#D0D5DD] text-grey rounded-md w-60 h-11 px-2 "
-                    >
-                     
-                      <option value="call">skill</option>
-                      <option value="email">skills</option>
-                      <option value="sms">skills</option>
-                    </select>
+                    <Select options={skills} isMulti  className=" col-span-2  text-base w-60  text-grey rounded-md h-11  " ></Select>
                   </div>
                   <div className="col-span-6 my-2  items-center flex justify-between">
                     <label className="col-span-4 text-[#48505E] text-base font-normal  ">
                       Emotional Status
                     </label>
-                    <select
-                      defaultValue="Select Skills"
-                      className=" col-span-2 border border-[#D0D5DD] text-grey rounded-md w-60 h-11 px-2 "
-                    >
-                     
-                      <option value="call">skill</option>
-                      <option value="email">skills</option>
-                      <option value="sms">skills</option>
-                    </select>
+                    <Select options={skills} isMulti  className=" col-span-2  text-base w-60  text-grey rounded-md h-11  " ></Select>
                   </div>
                 </div>
                 <div className="col-span-12 mb-5 flex justify-between items-center gap-4">

@@ -18,7 +18,6 @@ import Navbar from "./Navbar";
 const Layout = () => {
   const location = useLocation();
   const [open, setOpen] = useState(true);
-  const [submenuopen, Setsubmenuopen] = useState(false);
 
   const Menus = [
     { title: "Dashboard", icon: <LuLayoutDashboard />, to: "/dashboard" },
@@ -37,8 +36,8 @@ const Layout = () => {
     <div>
       <div className="w-full h-screen relative z-0  md:flex">
         <div
-          className={` md:relative md:grid md:grid-rows-12 absolute transition-all shadow-2xl duration-100 ${
-            open ? "md:w-1/6 w-3/6 h-screen" : "md:w-1/12 "
+          className={` md:relative md:grid md:grid-rows-12 bg-white absolute transition-all shadow-2xl duration-100 ${
+            open ? "md:w-1/6  w-3/6 h-screen" : "md:w-1/12 "
           }`}
         >
           <TiThMenu
@@ -69,7 +68,7 @@ const Layout = () => {
                         location.pathname === menu.to
                           ? `${
                               open
-                                ? "bg-select-sidebar  border-r-4 border-orange text-blue-500 transition-all duration-500"
+                                ? "bg-select-sidebar  border-r-8 border-orange text-blue-500 transition-all duration-500"
                                 : "md:bg-gray-200 md:text-primary md:transition-all md:duration-500 duration-75"
                             }`
                           : "text-gray-500  "

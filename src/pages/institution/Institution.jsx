@@ -41,7 +41,7 @@ const Institution = () => {
         <div className=" overflow-x-auto  no-scrollbar">
           <table className="w-full  items-center rounded-lg overflow-auto ">
             <thead className="items-center">
-              <tr className=" text-end  ">
+              <tr className=" text-end border-b-2 ">
                 <th className="bg-slate-200 p-4 font-semibold rounded-l-lg ">
                   <p className="flex gap-1 items-center">
                     {" "}
@@ -106,7 +106,7 @@ const Institution = () => {
               </tr>
             </thead>
             <tbody className="overflow-x-auto">
-              <tr className="text-sm text-start bg-white text-gray-400 border-b-2">
+              <tr className="text-sm text-start bg-white text-table-text border-b-2 ">
                 <td className="py-3 pl-4 ">
                   <p>123</p>
                 </td>
